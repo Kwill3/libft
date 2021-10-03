@@ -21,11 +21,11 @@ int	ft_atoi(const char *str)
 	count = 0;
 	sign = 1;
 	base = 0;
-	while (!(str[count] >= '0' && str[count] <= '9'))
+	while (!ft_isdigit(str[count]))
 		count++;
 	if (str[count - 1] == '-')
 		sign *= -1;
-	while (str[count] >= '0' && str[count] <= '9')
+	while (ft_isdigit(str[count]))
 	{
 		base = (base * 10) + (str[count] - '0');
 		count++;
